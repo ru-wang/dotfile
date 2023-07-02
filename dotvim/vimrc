@@ -1,0 +1,99 @@
+source ~/.vim/plug.vim
+
+syntax enable
+
+set background=dark
+set backspace=indent,eol,start
+set cindent
+set cinoptions=l1
+set cursorline
+set expandtab
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fillchars=fold:-
+set hidden
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set matchpairs+=<:>
+set mouse-=a
+set noshowmode
+set nowildmenu
+set nowrap
+set secure
+set showcmd
+set smartindent
+set sts=4 sw=4 ts=4
+set termguicolors
+set updatetime=200
+set wildignorecase
+
+let g:tex_conceal = ''
+let g:tex_flavor  = 'latex'
+
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
+nnoremap <S-x> <C-w>c
+
+nnoremap <leader>nsp :call <SID>no_list_space()<CR>
+nnoremap <leader>sp :call <SID>list_space()<CR>
+nnoremap <leader>wm :call <SID>wmode()<CR>
+nnoremap <leader>r :%s/\<<C-r><C-w>\>\C/<C-r><C-w>/g<Left><Left>
+nnoremap <leader>* ^y$/\V<C-r>"<CR>
+vnoremap <leader>r :s/\<\>\C//g<Left><Left><Left><Left><Left><Left><Left>
+vnoremap <leader>s :sort<CR>
+
+nnoremap <silent><leader>yf :let @+ = fnamemodify(expand("%"), ":~:.")<CR>
+
+if has('gui_running')
+  source ~/.vim/gui.vim
+endif
+
+function! s:list_space()
+  set list
+  set lcs=tab:>.,trail:⋅
+endfunc
+
+function! s:no_list_space()
+  set nolist
+endfunc
+
+function! s:wmode()
+  set wrap
+  set nolinebreak
+  set nonumber
+  set lsp=8
+
+  let g:lsp_factor = 1.5
+
+  vnoremap j gj
+  vnoremap k gk
+  vnoremap ^ g^
+  vnoremap 0 g0
+  vnoremap $ g$
+  nnoremap j gj
+  nnoremap k gk
+  nnoremap ^ g^
+  nnoremap 0 g0
+  nnoremap $ g$
+endfunc
+
+function! s:source_local_rcfile(rcfile_relpath)
+  if getcwd() ==# $HOME
+    return 0
+  else
+    let rcfile_abspath = getcwd() . '/' . a:rcfile_relpath
+    if filereadable(rcfile_abspath)
+      silent execute 'source ' . rcfile_abspath
+      return 1
+    else
+      return 0
+    endif
+  endif
+endfunc
+
+let ret = <sid>source_local_rcfile('.vimrc') || <sid>source_local_rcfile('.vim/vimrc')
+if has('gui_running')
+  let ret = <sid>source_local_rcfile('.gvimrc') || <sid>source_local_rcfile('.vim/gvimrc')
+endif

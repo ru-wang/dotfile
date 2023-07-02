@@ -1,0 +1,47 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "diagnostic.enableSign": false,
+  "inlayHint.enable": false,
+  "semanticTokens.enable": true,
+  "suggest.enablePreselect": false,
+  "suggest.labelMaxLength": 80,
+  "suggest.noselect": true,
+
+  "clangd.disableSnippetCompletion": true,
+
+  "clangd.arguments": [
+    "--all-scopes-completion=false",
+    "--clang-tidy=true",
+    "--cross-file-rename",
+    "--header-insertion=never"
+  ],
+
+  "clangd.fallbackFlags": [
+    "-xc++",
+    "-std=c++17",
+    "-pedantic",
+    "-Wall",
+    "-isystem/usr/include/eigen3"
+  ],
+
+  "diagnostic-languageserver.formatFiletypes": {
+    "python": ["black", "isort", "docformatter"]
+  },
+
+  "diagnostic-languageserver.formatters": {
+    "black": {
+      "command": "black",
+      "args": ["-q", "-"]
+    },
+    "isort": {
+      "command": "isort",
+      "args": ["-q", "-"]
+    },
+    "docformatter": {
+      "command": "docformatter",
+      "args": ["-"]
+    }
+  },
+
+  "jedi.jediSettings.autoImportModules": ["numpy", "matplotlib"]
+}

@@ -1,0 +1,32 @@
+{
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'WenQuanYi Micro Hei Mono'",
+    "editor.mouseWheelZoom": true,
+    "editor.renderWhitespace": "trailing",
+    "editor.rulers": [100],
+    "editor.tabSize": 2,
+    "extensions.ignoreRecommendations": true,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "window.titleBarStyle": "custom",
+    "window.zoomLevel": 1,
+    "workbench.layoutControl.enabled": true,
+    "workbench.layoutControl.type": "both",
+
+    "files.exclude": {
+        "**/.*.swp": true
+    },
+
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "gitlens.views.remotes.files.layout": "list",
+    "markdown-mermaid.darkModeTheme": "default",
+    "markdown-preview-github-styles.colorTheme": "light",
+    "vim.autoSwitchInputMethod.defaultIM": "1",
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote -t {im}",
+    "vim.easymotion": true,
+}
