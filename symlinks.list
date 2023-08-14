@@ -1,3 +1,4 @@
+d ./dotfish .config/fish
 d ./dotgtk/gtk-3.0 .config/gtk-3.0
 d ./dotvim .vim
 f ./dotdocker .docker/config.json
@@ -6,5 +7,6 @@ f ./dotgtk/gtk-bookmarks .git-bookmarks
 f ./dotgtk/gtkrc-2.0 .gtkrc-2.0
 f ./doti3/i3 .config/i3/config
 f ./doti3/i3status .config/i3status/config
+f ./dottypora_base.css .config/Typora/themes/base.user.css
 f ./dotuser-dirs .config/user-dirs.dirs
 f ./dotvscode .config/Code/User/settings.json
