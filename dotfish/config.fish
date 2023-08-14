@@ -15,5 +15,3 @@ alias gpp="git pull --prune"
 
 alias gs="git status"
 alias gf="git flow"
-
-alias pc="proxychains"
