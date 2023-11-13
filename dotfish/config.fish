@@ -1,5 +1,10 @@
 set LANG en_US.UTF-8
 
+eval (/opt/homebrew/bin/brew shellenv)
+set HOMEBREW_API_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api
+set HOMEBREW_BREW_GIT_REMOTE https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+set HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
 alias lh="ls -lh"
 alias lah="ls -lah"
 

@@ -1,9 +1,13 @@
 [user]
-    email = rockidog@live.com
-    name = Wang Ru
+	email = rockidog@live.com
+	name = Wang Ru
 [alias]
     glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(bold green)%s%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [difftool]
     prompt = false
 [core]
     quotepath = false
+    editor = nvim
+	excludesFile = /Users/ru/.gitignore_global
+[diff]
+	tool = vimdiff
