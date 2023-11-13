@@ -1,5 +1,4 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
   "diagnostic.enableSign": false,
   "inlayHint.enable": false,
   "semanticTokens.enable": true,
@@ -7,7 +6,12 @@
   "suggest.labelMaxLength": 80,
   "suggest.noselect": true,
 
+  "[python]": {
+    "coc.preferences.formatOnSave": true
+  },
+
   "clangd.disableSnippetCompletion": true,
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
 
   "clangd.arguments": [
     "--all-scopes-completion=false",
@@ -21,7 +25,10 @@
     "-std=c++17",
     "-pedantic",
     "-Wall",
-    "-isystem/usr/include/eigen3"
+    "-isystem/opt/homebrew/include",
+    "-isystem/opt/homebrew/include/eigen3",
+    "-isystem/opt/homebrew/include/opencv4",
+    "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
   ],
 
   "diagnostic-languageserver.formatFiletypes": {
@@ -43,5 +50,8 @@
     }
   },
 
-  "jedi.jediSettings.autoImportModules": ["numpy", "matplotlib"]
+  "jedi.jediSettings.autoImportModules": [
+    "numpy",
+    "matplotlib"
+  ]
 }

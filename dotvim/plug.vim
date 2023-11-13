@@ -39,6 +39,8 @@ colorscheme base16-horizon-dark
 
 " colorscheme settings
 let g:ayucolor               = 'dark'
+let g:codedark_italics       = 1
+let g:codedark_modern        = 1
 let g:edge_style             = 'neon'
 let g:gruvbox_contrast_dark  = 'hard'
 let g:gruvbox_contrast_light = 'hard'
@@ -55,7 +57,7 @@ let g:goyo_width  = '60%'
 let g:goyo_height = '95%'
 let g:goyo_linenr = 1
 
-let g:NERDTreeAutoCenter          = 0
+let g:NERDTreeAutoCenter          = 1
 let g:NERDTreeCaseSensitiveSort   = 1
 let g:NERDTreeDirArrowCollapsible = ' '
 let g:NERDTreeDirArrowExpandable  = ' '
@@ -76,12 +78,7 @@ let g:UltiSnipsJumpForwardTrigger  = '<C-f>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 let g:UltiSnipsSnippetDirectories  = ['ultisnips']
 
-let g:airline_left_alt_sep    = ''
-let g:airline_left_sep        = ''
 let g:airline_powerline_fonts = 1
-let g:airline_right_alt_sep   = ''
-let g:airline_right_sep       = ''
-let g:airline_theme           = 'base16_horizon_dark'
 
 let g:airline#extensions#tabline#enabled            = 1
 let g:airline#extensions#tabline#show_buffers       = 0
@@ -115,7 +112,7 @@ if !&diff
 endif
 
 nnoremap <M-c> :FzfColors<CR>
-nnoremap <M-f> :FzfRg<CR>
+nnoremap <M-f> :FzfFiles %:p:h<CR>
 nnoremap <M-g> :FzfGFiles?<CR>
 nnoremap <M-b> :FzfBuffers<CR>
 nnoremap <M-i> :FzfBCommits<CR>
@@ -135,12 +132,11 @@ if !&diff
   nnoremap <leader>gg :GitGutterToggle<CR>
   nnoremap <leader>lc :LinediffReset<CR>
   vnoremap <leader>ld :Linediff<CR>
-  nmap <M-e> <plug>(vimtex-errors)
-  nmap <M-u> <plug>(GitGutterUndoHunk)
-  nmap <M-p> <plug>(GitGutterPreviewHunk)
-  nmap <M-s> <plug>(GitGutterStageHunk)
-  nmap ]g <plug>(GitGutterNextHunk)
-  nmap [g <plug>(GitGutterPrevHunk)
+  nnoremap <M-u> <plug>(GitGutterUndoHunk)
+  nnoremap <M-p> <plug>(GitGutterPreviewHunk)
+  nnoremap <M-s> <plug>(GitGutterStageHunk)
+  nnoremap ]g <plug>(GitGutterNextHunk)
+  nnoremap [g <plug>(GitGutterPrevHunk)
 endif
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.

@@ -11,18 +11,18 @@ inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Use `[d` and `]d` to navigate diagnostics.
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [d <plug>(coc-diagnostic-prev)
-nmap <silent> ]d <plug>(coc-diagnostic-next)
+nnoremap <silent> [d <plug>(coc-diagnostic-prev)
+nnoremap <silent> ]d <plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> <leader>jd <plug>(coc-definition)
-nmap <silent> <leader>jy <plug>(coc-type-definition)
-nmap <silent> <leader>ji <plug>(coc-implementation)
-nmap <silent> <leader>jr <plug>(coc-references)
+nnoremap <silent> <leader>jd <plug>(coc-definition)
+nnoremap <silent> <leader>jy <plug>(coc-type-definition)
+nnoremap <silent> <leader>ji <plug>(coc-implementation)
+nnoremap <silent> <leader>jr <plug>(coc-references)
 
 " Formatting selected code.
-xmap <leader>f <plug>(coc-format-selected)
-nmap <leader>f <plug>(coc-format-selected)
+xnoremap <leader>f <plug>(coc-format-selected)
+nnoremap <leader>f <plug>(coc-format-selected)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <sid>show_documentation()<CR>
@@ -31,14 +31,14 @@ nnoremap <silent> K :call <sid>show_documentation()<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>R <plug>(coc-rename)
+nnoremap <leader>R <plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f <plug>(coc-format-selected)
-nmap <leader>f <plug>(coc-format-selected)
+xnoremap <leader>f <plug>(coc-format-selected)
+nnoremap <leader>f <plug>(coc-format-selected)
 
 " Apply AutoFix to problem on the current line.
-nmap <leader>x <plug>(coc-fix-current)
+nnoremap <leader>x <plug>(coc-fix-current)
 
 nnoremap <leader>o :CocCommand clangd.switchSourceHeader<CR>
 

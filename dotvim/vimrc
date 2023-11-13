@@ -1,3 +1,5 @@
+set shell=/opt/homebrew/bin/fish
+
 source ~/.vim/plug.vim
 
 syntax enable
@@ -10,7 +12,7 @@ set cursorline
 set expandtab
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set fillchars=fold:-
+set fillchars+=vert:│
 set hidden
 set hlsearch
 set ignorecase
@@ -63,9 +65,6 @@ function! s:wmode()
   set wrap
   set nolinebreak
   set nonumber
-  set lsp=8
-
-  let g:lsp_factor = 1.5
 
   vnoremap j gj
   vnoremap k gk
