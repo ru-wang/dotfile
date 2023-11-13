@@ -1,32 +1,41 @@
 {
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'WenQuanYi Micro Hei Mono'",
+    "editor.autoIndent": "advanced",
+    "editor.fontFamily": "FiraCodeNFM-Ret",
+    "editor.fontSize": 14,
     "editor.mouseWheelZoom": true,
     "editor.renderWhitespace": "trailing",
     "editor.rulers": [100],
     "editor.tabSize": 2,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
     "extensions.ignoreRecommendations": true,
+    "git.autoRepositoryDetection": false,
+    "git.openRepositoryInParentFolders": "never",
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "terminal.integrated.fontFamily": "FiraCodeNFM-Ret",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.macOptionIsMeta": true,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "window.autoDetectColorScheme": true,
     "window.titleBarStyle": "custom",
-    "window.zoomLevel": 1,
     "workbench.layoutControl.enabled": true,
     "workbench.layoutControl.type": "both",
+    "zenMode.centerLayout": false,
 
     "files.exclude": {
-        "**/.*.swp": true
+        "**/.*.swp": true,
+        "**/.build*": true,
+        "**/.vim*": true
     },
-
-    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
 
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.views.commitDetails.files.layout": "tree",
     "gitlens.views.remotes.files.layout": "list",
-    "markdown-mermaid.darkModeTheme": "default",
-    "markdown-preview-github-styles.colorTheme": "light",
-    "vim.autoSwitchInputMethod.defaultIM": "1",
+    "path-intellisense.absolutePathToWorkspace": false,
+    "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
     "vim.autoSwitchInputMethod.enable": true,
-    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
-    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote -t {im}",
-    "vim.easymotion": true,
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select {im}",
+    "vim.easymotion": true
 }
