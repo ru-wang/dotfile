@@ -21,8 +21,8 @@ nnoremap <silent> <leader>ji <plug>(coc-implementation)
 nnoremap <silent> <leader>jr <plug>(coc-references)
 
 " Formatting selected code.
-xnoremap <leader>f <plug>(coc-format-selected)
-nnoremap <leader>f <plug>(coc-format-selected)
+vnoremap <leader>f <plug>(coc-format-selected)
+nnoremap <leader>f <plug>(coc-format)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <sid>show_documentation()<CR>
@@ -33,14 +33,13 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nnoremap <leader>R <plug>(coc-rename)
 
-" Formatting selected code.
-xnoremap <leader>f <plug>(coc-format-selected)
-nnoremap <leader>f <plug>(coc-format-selected)
-
 " Apply AutoFix to problem on the current line.
 nnoremap <leader>x <plug>(coc-fix-current)
 
+nnoremap <leader>i :call CocActionAsync('organizeImport')<CR>
 nnoremap <leader>o :CocCommand clangd.switchSourceHeader<CR>
+nnoremap <leader>nt <Cmd>CocCommand explorer --no-focus<CR>
+nnoremap <leader>nf <Cmd>CocCommand explorer --no-toggle<CR>
 
 function! s:check_back_space() abort
   let col = col('.') - 1

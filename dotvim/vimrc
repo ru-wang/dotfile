@@ -26,7 +26,7 @@ set nowrap
 set secure
 set showcmd
 set smartindent
-set sts=4 sw=4 ts=4
+set sts=2 sw=2 ts=2
 set termguicolors
 set updatetime=200
 set wildignorecase
@@ -43,6 +43,7 @@ nnoremap <leader>sp :call <SID>list_space()<CR>
 nnoremap <leader>wm :call <SID>wmode()<CR>
 nnoremap <leader>r :%s/\<<C-r><C-w>\>\C/<C-r><C-w>/g<Left><Left>
 nnoremap <leader>* ^y$/\V<C-r>"<CR>
+nnoremap <leader><leader>* /\V<C-r><C-w><CR>
 vnoremap <leader>r :s/\<\>\C//g<Left><Left><Left><Left><Left><Left><Left>
 vnoremap <leader>s :sort<CR>
 

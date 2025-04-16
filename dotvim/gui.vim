@@ -1,13 +1,12 @@
 " internal variables
 let g:gfw_size_diff               = 2
 let g:lsp_factor                  = 1.2
-let g:preferred_dark_colorscheme  = 'base16-default-dark'
-let g:preferred_light_colorscheme = 'base16-default-light'
-
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:preferred_dark_colorscheme  = 'codedark'
+let g:preferred_light_colorscheme = 'ayu'
 
 if has('gui_macvim')
-  set guifont=FiraCodeNFM-Ret:h14
+  set guifont=FiraCode\ Nerd\ Font\ Mono Ret:h14
+  set macligatures
   set macmeta
   set visualbell
   au InsertEnter * set noimdisable
@@ -16,7 +15,7 @@ if has('gui_macvim')
 else
   set guifont=FiraCode\ Nerd\ Font\ Mono\ 14
 endif
-set guioptions=k
+set guioptions=ck
 
 nnoremap <M--> :call <SID>smaller_fontsize()<CR>
 nnoremap <M-=> :call <SID>larger_fontsize()<CR>

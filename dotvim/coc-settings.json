@@ -13,13 +13,13 @@
   "clangd.disableSnippetCompletion": true,
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
 
+  "clangd.disableSnippetCompletion": true,
   "clangd.arguments": [
     "--all-scopes-completion=false",
     "--clang-tidy=true",
     "--cross-file-rename",
     "--header-insertion=never"
   ],
-
   "clangd.fallbackFlags": [
     "-xc++",
     "-std=c++17",
@@ -48,6 +48,19 @@
       "command": "docformatter",
       "args": ["-"]
     }
+  },
+
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+  "explorer.file.reveal.whenOpen": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.source": "vim-devicons",
+  "explorer.openAction.strategy": "previousBuffer",
+  "explorer.root.strategies": [ "cwd" ],
+  "explorer.width": 45,
+  "explorer.keyMappings.global": {
+    "h": false,
+    "l": false,
+    "v": "open:vsplit"
   },
 
   "jedi.jediSettings.autoImportModules": [

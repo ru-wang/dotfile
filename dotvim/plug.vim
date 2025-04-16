@@ -1,49 +1,50 @@
 call plug#begin('~/.vim/plugged')
 
 " colorschemes
-Plug    'ayu-theme/ayu-vim'
-Plug 'chriskempson/base16-vim'
-Plug      'sainnhe/edge'
-Plug     'nanotech/jellybeans.vim'
-Plug        'sonph/onehalf', {'rtp' : 'vim'}
-Plug   'logico-dev/typewriter'
-Plug    'tomasiser/vim-code-dark'
-Plug    'datMaffin/vim-colors-bionik'
+Plug 'ayu-theme/ayu-vim'
+Plug 'catppuccin/nvim',                     {'as': 'catppuccin'}
+Plug 'datMaffin/vim-colors-bionik'
+Plug 'lifepillar/vim-solarized8'
+Plug 'logico-dev/typewriter'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'sainnhe/edge'
+Plug 'sonph/onehalf',                       {'rtp': 'vim'}
+Plug 'tomasiser/vim-code-dark'
 
 " plugins
-Plug      'junegunn/fzf',                           {'do'  : {-> fzf#install()}}
-Plug      'junegunn/fzf.vim'
-Plug      'junegunn/goyo.vim',                      {'on'  : 'Goyo'}
-Plug     'preservim/nerdtree'
-Plug     'godlygeek/tabular',                       {'on'  : 'Tabularize'}
-Plug    'majutsushi/tagbar',                        {'on'  : ['Tagbar', 'TagbarToggle']}
-Plug        'SirVer/ultisnips'
-Plug   'vim-airline/vim-airline'
-Plug   'vim-airline/vim-airline-themes'
-Plug     'ryanoasis/vim-devicons'
-Plug    'easymotion/vim-easymotion'
+Plug 'SirVer/ultisnips'
+Plug 'easymotion/vim-easymotion'
+Plug 'godlygeek/tabular',                   {'on': 'Tabularize'}
+Plug 'junegunn/fzf',                        {'do': {-> fzf#install()}}
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim',                   {'on': 'Goyo'}
+Plug 'majutsushi/tagbar',                   {'on': ['Tagbar', 'TagbarToggle']}
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'wellle/targets.vim'
 
-
-Plug 'vim-scripts/DirDiff.vim',           &diff ? {'on' : []} : {'on'     : 'DirDiff'}
-Plug    'neoclide/coc.nvim',              &diff ? {'on' : []} : {'branch' : 'release'}
-Plug 'AndrewRadev/linediff.vim',          &diff ? {'on' : []} : {'on'     : ['Linediff', 'LinediffReset']}
-Plug      'lervag/vimtex',                &diff ? {'on' : []} : {'for'    : ['tex', 'plaintex', 'bib']}
-Plug         'dag/vim-fish',              &diff ? {'on' : []} : {'for'    : 'fish'}
-Plug    'airblade/vim-gitgutter',         &diff ? {'on' : []} : {'on'     : 'GitGutterToggle'}
-Plug  'tikhomirov/vim-glsl',              &diff ? {'on' : []} : {'for'    : 'glsl'}
-Plug  'plasticboy/vim-markdown',          &diff ? {'on' : []} : {'for'    : 'markdown'}
+" disable in diff mode
+Plug 'AndrewRadev/linediff.vim', &diff ? {'on': []} : {'on': ['Linediff', 'LinediffReset']}
+Plug 'airblade/vim-gitgutter',   &diff ? {'on': []} : {'on': 'GitGutterToggle'}
+Plug 'dag/vim-fish',             &diff ? {'on': []} : {'for': 'fish'}
+Plug 'lervag/vimtex',            &diff ? {'on': []} : {'for': ['tex', 'plaintex', 'bib']}
+Plug 'neoclide/coc.nvim',        &diff ? {'on': []} : {'branch': 'release'}
+Plug 'plasticboy/vim-markdown',  &diff ? {'on': []} : {'for': 'markdown'}
+Plug 'tikhomirov/vim-glsl',      &diff ? {'on': []} : {'for': 'glsl'}
+Plug 'vim-scripts/DirDiff.vim',  &diff ? {'on': []} : {'on': 'DirDiff'}
 
 call plug#end()
 
-colorscheme base16-horizon-dark
+colorscheme codedark
 
 " colorscheme settings
-let g:ayucolor               = 'dark'
-let g:codedark_italics       = 1
-let g:codedark_modern        = 1
-let g:edge_style             = 'neon'
-let g:gruvbox_contrast_dark  = 'hard'
-let g:gruvbox_contrast_light = 'hard'
+let g:ayucolor             = 'dark'
+let g:codedark_italics     = 1
+let g:codedark_modern      = 1
+let g:edge_style           = 'neon'
+let g:solarized_visibility = 'low'
 
 " plugin settings
 let $FZF_DEFAULT_COMMAND      = 'rg --files'
@@ -57,17 +58,10 @@ let g:goyo_width  = '60%'
 let g:goyo_height = '95%'
 let g:goyo_linenr = 1
 
-let g:NERDTreeAutoCenter          = 1
-let g:NERDTreeCaseSensitiveSort   = 1
-let g:NERDTreeDirArrowCollapsible = ' '
-let g:NERDTreeDirArrowExpandable  = ' '
-let g:NERDTreeWinPos              = 'left'
-let g:NERDTreeWinSize             = 35
-
 let g:tagbar_autofocus = 1
 let g:tagbar_foldlevel = 3
 let g:tagbar_iconchars = ['▸','▾']
-let g:tagbar_left      = 0
+let g:tagbar_left      = 1
 let g:tagbar_silent    = 1
 let g:tagbar_sort      = 0
 let g:tagbar_width     = 35
@@ -88,6 +82,7 @@ let g:airline#extensions#tabline#show_tab_count     = 0
 let g:airline#extensions#tabline#show_tab_type      = 0
 let g:airline#extensions#tabline#tabtitle_formatter = 'AirlineTabTitleFormatter'
 
+let g:DevIconsAppendArtifactFix = 0
 let g:EasyMotion_smartcase = 1
 
 if !&diff
@@ -120,13 +115,9 @@ nnoremap <M-l> :FzfBLines<CR>
 nnoremap <M-n> :FzfFiles<CR>
 nnoremap <M-o> :FzfBTags<CR>
 nnoremap <M-h> :FzfHistory:<CR>
-nnoremap <leader>f :FzfRg <C-r><C-w>
+nnoremap <leader>F :FzfRg <C-r><C-w>
 nnoremap <leader>dfm :Goyo<CR>
 nnoremap <leader>tl :TagbarToggle<CR>
-
-" Mirror the NERDTree before showing it. This makes it the same on all tabs.
-nnoremap <leader>nf :NERDTreeMirror<CR>:NERDTreeFind<CR>
-nnoremap <leader>nt :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 
 if !&diff
   nnoremap <leader>gg :GitGutterToggle<CR>
@@ -138,9 +129,6 @@ if !&diff
   nnoremap ]g <plug>(GitGutterNextHunk)
   nnoremap [g <plug>(GitGutterPrevHunk)
 endif
-
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-au BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 au ColorScheme * highlight link GitGutterAdd          DiffAdd
 au ColorScheme * highlight link GitGutterChange       DiffChange
@@ -156,5 +144,8 @@ function AirlineTabTitleFormatter(n)
   let bufnr = buflist[winnr - 1]
   let winid = win_getid(winnr, a:n)
   let original_formatter = airline#extensions#tabline#formatters#default#format(bufnr, buflist)
-  return original_formatter . g:WebDevIconsTabAirLineBeforeGlyphPadding . WebDevIconsGetFileTypeSymbol(bufname(bufnr))
+  return original_formatter 
+        \ . g:WebDevIconsTabAirLineBeforeGlyphPadding 
+        \ . WebDevIconsGetFileTypeSymbol(bufname(bufnr))
+        \ . g:WebDevIconsTabAirLineAfterGlyphPadding
 endfunction
