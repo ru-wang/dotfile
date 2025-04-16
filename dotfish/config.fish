@@ -1,4 +1,4 @@
-set LANG en_US.UTF-8
+set -x LANG en_US.UTF-8
 
 eval (/opt/homebrew/bin/brew shellenv)
 set HOMEBREW_API_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api
